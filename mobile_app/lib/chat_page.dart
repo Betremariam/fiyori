@@ -32,6 +32,7 @@ class ChatPage extends StatelessWidget {
               ],
             ),
           ),
+          _buildInputMessage(),
         ],
       ),
     );
@@ -63,6 +64,35 @@ class ChatPage extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         child: Text(message, style: Theme.of(context).textTheme.bodyMedium),
+      ),
+    );
+  }
+
+  Widget _buildInputMessage() {
+    return Container(
+      child: Row(
+        children: [
+          GestureDetector(
+            child: Icon(Icons.camera_alt, color: Colors.grey),
+            onTap: () {},
+          ),
+          SizedBox(width: 10),
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: "write your message",
+                hintStyle: TextStyle(color: Colors.grey),
+                border: InputBorder.none,
+              ),
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          SizedBox(width: 10),
+          GestureDetector(
+            child: Icon(Icons.send, color: Colors.grey),
+            onTap: () {},
+          ),
+        ],
       ),
     );
   }
