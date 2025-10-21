@@ -28,6 +28,7 @@ class ChatPage extends StatelessWidget {
               children: [
                 Padding(padding: EdgeInsets.all(25)),
                 _buildRecivedMessages(context, "hello dude"),
+                _buildSentMessages(context, "yoo how are you"),
               ],
             ),
           ),
@@ -44,6 +45,21 @@ class ChatPage extends StatelessWidget {
         padding: EdgeInsets.all(25),
         decoration: BoxDecoration(
           color: DefaultColors.receiverMessage,
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Text(message, style: Theme.of(context).textTheme.bodyMedium),
+      ),
+    );
+  }
+
+  Widget _buildSentMessages(BuildContext context, String message) {
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Container(
+        margin: EdgeInsets.only(right: 30, top: 5, bottom: 5),
+        padding: EdgeInsets.all(25),
+        decoration: BoxDecoration(
+          color: DefaultColors.senderMessage,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Text(message, style: Theme.of(context).textTheme.bodyMedium),
