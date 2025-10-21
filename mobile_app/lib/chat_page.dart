@@ -70,6 +70,12 @@ class ChatPage extends StatelessWidget {
 
   Widget _buildInputMessage() {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 12),
+      padding: EdgeInsets.all(25),
+      decoration: BoxDecoration(
+        color: DefaultColors.sentMessageInput,
+        borderRadius: BorderRadius.circular(25),
+      ),
       child: Row(
         children: [
           GestureDetector(
