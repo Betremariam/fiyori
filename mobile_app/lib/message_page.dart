@@ -36,6 +36,11 @@ class MessagePage extends StatelessWidget {
               ],
             ),
           ),
+          Expanded(
+            child: ListView(
+              children: [_buildMessageTile("danny", "hello dude", "08:43")],
+            ),
+          ),
         ],
       ),
     );
@@ -54,6 +59,26 @@ class MessagePage extends StatelessWidget {
           Text(name, style: Theme.of(context).textTheme.bodyMedium),
         ],
       ),
+    );
+  }
+
+  Widget _buildMessageTile(String name, String message, String time) {
+    return ListTile(
+      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      leading: CircleAvatar(
+        radius: 30,
+        backgroundImage: NetworkImage('https://via.placeholder.com/150'),
+      ),
+      title: Text(
+        name,
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      ),
+      subtitle: Text(
+        message,
+        style: TextStyle(color: Colors.grey),
+        overflow: TextOverflow.ellipsis,
+      ),
+      trailing: Text(time, style: TextStyle(color: Colors.grey)),
     );
   }
 }
