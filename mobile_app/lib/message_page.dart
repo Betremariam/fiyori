@@ -19,8 +19,27 @@ class MessagePage extends StatelessWidget {
           Container(
             height: 100,
             padding: EdgeInsets.all(5),
-            child: ListView(scrollDirection: Axis.horizontal, children: []),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [_buildRecentContact(context)],
+            ),
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRecentContact(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundImage: NetworkImage('https://via.placeholder.com/150'),
+          ),
+          SizedBox(height: 5),
+          Text('test', style: Theme.of(context).textTheme.bodyMedium),
         ],
       ),
     );
