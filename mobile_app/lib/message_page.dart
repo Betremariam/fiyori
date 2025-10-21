@@ -15,13 +15,25 @@ class MessagePage extends StatelessWidget {
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Text('recent', style: Theme.of(context).textTheme.bodySmall),
+          ),
           Container(
             height: 100,
             padding: EdgeInsets.all(5),
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: [_buildRecentContact(context)],
+              children: [
+                _buildRecentContact("Betre", context),
+                _buildRecentContact("saliba", context),
+                _buildRecentContact("sagna", context),
+                _buildRecentContact("arteta", context),
+                _buildRecentContact("ronney", context),
+                _buildRecentContact("max", context),
+              ],
             ),
           ),
         ],
@@ -29,7 +41,7 @@ class MessagePage extends StatelessWidget {
     );
   }
 
-  Widget _buildRecentContact(BuildContext context) {
+  Widget _buildRecentContact(String name, BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: Column(
@@ -39,7 +51,7 @@ class MessagePage extends StatelessWidget {
             backgroundImage: NetworkImage('https://via.placeholder.com/150'),
           ),
           SizedBox(height: 5),
-          Text('test', style: Theme.of(context).textTheme.bodyMedium),
+          Text(name, style: Theme.of(context).textTheme.bodyMedium),
         ],
       ),
     );
