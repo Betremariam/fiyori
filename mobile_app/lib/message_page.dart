@@ -12,8 +12,17 @@ class MessagePage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         toolbarHeight: 70,
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
       ),
-      body: Text("message page "),
+      body: Column(
+        children: [
+          Container(
+            height: 100,
+            padding: EdgeInsets.all(5),
+            child: ListView(scrollDirection: Axis.horizontal, children: []),
+          ),
+        ],
+      ),
     );
   }
 }
