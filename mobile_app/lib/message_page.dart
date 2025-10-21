@@ -38,24 +38,23 @@ class MessagePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 10),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: DefaultColors.messageListPage,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                  topRight: Radius.circular(50),
-                ),
+
+          Container(
+            decoration: BoxDecoration(
+              color: DefaultColors.messageListPage,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(50),
+                topRight: Radius.circular(50),
               ),
-              child: ListView(
-                children: [
-                  _buildMessageTile("danny", "hello dude", "08:43"),
-                  _buildMessageTile("abebe", "you are cooked", "08:33"),
-                  _buildMessageTile("almaz", "kicked", "08:03"),
-                  _buildMessageTile("mamo", "hella yoo", "07:43"),
-                  _buildMessageTile("danny", "fazz", "09:43"),
-                ],
-              ),
+            ),
+            child: ListView(
+              children: [
+                _buildMessageTile("danny", "hello dude", "08:43"),
+                _buildMessageTile("abebe", "you are cooked", "08:33"),
+                _buildMessageTile("almaz", "kicked", "08:03"),
+                _buildMessageTile("mamo", "hella yoo", "07:43"),
+                _buildMessageTile("danny", "fazz", "09:43"),
+              ],
             ),
           ),
         ],
