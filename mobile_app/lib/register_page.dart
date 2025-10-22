@@ -27,6 +27,8 @@ class _RegisterPageState extends State<RegisterPage> {
               _buildInputText('email', Icons.person, emailController),
               SizedBox(height: 10),
               _buildInputText('password', Icons.person, passwordController),
+              SizedBox(height: 10),
+              _buildRegisterButton(),
             ],
           ),
         ),
@@ -65,6 +67,18 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildRegisterButton() {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        backgroundColor: DefaultColors.buttonColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+        padding: EdgeInsets.all(25),
+      ),
+      child: Text("register", style: TextStyle(color: Colors.grey)),
     );
   }
 }
