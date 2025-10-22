@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/chat_page.dart';
 import 'package:mobile_app/core/theme.dart';
 import 'package:mobile_app/register_page.dart';
 

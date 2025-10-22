@@ -23,12 +23,14 @@ class _RegisterPageState extends State<RegisterPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               _buildInputText('username', Icons.person, usernameController),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               _buildInputText('email', Icons.person, emailController),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               _buildInputText('password', Icons.person, passwordController),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               _buildRegisterButton(),
+              SizedBox(height: 20),
+              _buildLogin(),
             ],
           ),
         ),
@@ -66,6 +68,23 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildLogin() {
+    return Center(
+      child: GestureDetector(
+        onTap: () {},
+        child: RichText(
+          text: TextSpan(
+            text: "already have an account?",
+            style: TextStyle(color: Colors.grey),
+            children: [
+              TextSpan(text: "login", style: TextStyle(color: Colors.blue)),
+            ],
+          ),
+        ),
       ),
     );
   }
