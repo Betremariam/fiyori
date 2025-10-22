@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/chat_page.dart';
 import 'package:mobile_app/core/theme.dart';
+import 'package:mobile_app/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Fiyori',
       theme: AppTheme.darkTheme,
-      home: ChatPage(),
+      home: RegisterPage(),
     );
   }
 }
