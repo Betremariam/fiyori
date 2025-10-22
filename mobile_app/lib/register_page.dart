@@ -9,11 +9,27 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    usernameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  void showInputValues() {
+    String username = usernameController.text;
+    String email = emailController.text;
+    String password = passwordController.text;
+    print('username:$username,email:$email,password:$password');
+  }
+
   @override
   Widget build(BuildContext context) {
-    final TextEditingController usernameController = TextEditingController();
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
     return Scaffold(
       body: Center(
         child: Padding(
@@ -26,7 +42,12 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(height: 20),
               _buildInputText('email', Icons.person, emailController),
               SizedBox(height: 20),
-              _buildInputText('password', Icons.person, passwordController),
+              _buildInputText(
+                'password',
+                Icons.person,
+                passwordController,
+                isPassword: true,
+              ),
               SizedBox(height: 20),
               _buildRegisterButton(),
               SizedBox(height: 20),
@@ -54,7 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Row(
         children: [
           Icon(icon, color: Colors.grey),
-          SizedBox(height: 10),
+          SizedBox(width: 10),
           Expanded(
             child: TextField(
               controller: controller,
@@ -91,7 +112,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget _buildRegisterButton() {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: showInputValues,
       style: ElevatedButton.styleFrom(
         backgroundColor: DefaultColors.buttonColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
